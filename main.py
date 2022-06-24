@@ -1,5 +1,6 @@
 import pygame
 
+from sprites import *
 from settings import *
 
 class Game:
@@ -15,7 +16,11 @@ class Game:
 
     def new(self):
         """Setup new game"""
-        pass
+
+        self.allSprites = pygame.sprite.Group()
+        
+        player = Player(self, (0, 0))
+        self.allSprites.add(player)
 
     def run(self):
         """The game's game loop"""
@@ -38,11 +43,15 @@ class Game:
 
     def update(self):
         """Update all the sprites"""
-        pass
+        
+        self.allSprites.update()
 
     def draw(self):
         """Draw all the sprites and flip the display"""
+
         self.screen.fill(BLACK)
+
+        self.allSprites.draw(self.screen)
 
         pygame.display.flip()
 

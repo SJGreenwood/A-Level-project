@@ -15,3 +15,8 @@ pygame.init()
 displayInfo = pygame.display.Info()
 WIDTH = int(displayInfo.current_w * 2 / 3)
 HEIGHT = int(displayInfo.current_h * 2 / 3)
+
+CHARACTER_SPEED = 80
+FRICTION = 0.8
+
+TILESIZE = 32
